@@ -22,6 +22,10 @@ namespace ClassDemoRestService.Controllers
             new Item(5,"Milk","Low",55.8)
         };
 
+        /// <summary>
+        /// Gets all items from list
+        /// </summary>
+        /// <returns>list</returns>
         // GET: api/Items
         [HttpGet]
         public IEnumerable<Item> Get()
@@ -29,6 +33,11 @@ namespace ClassDemoRestService.Controllers
             return items;
         }
 
+        /// <summary>
+        /// Get specific item from list by its id
+        /// </summary>
+        /// <param name="id">Id to get item from</param>
+        /// <returns>specific item by id</returns>
         // GET: api/Items/5
         [HttpGet]
         [Route("{id}")]
@@ -37,6 +46,10 @@ namespace ClassDemoRestService.Controllers
             return items.Find(i => i.Id == id);
         }
 
+        /// <summary>
+        /// Adds item to list
+        /// </summary>
+        /// <param name="value">Item to add</param>
         // POST: api/Items
         [HttpPost]
         public void Post([FromBody] Item value)
@@ -44,6 +57,11 @@ namespace ClassDemoRestService.Controllers
             items.Add(value);
         }
 
+        /// <summary>
+        /// Changes values in an item
+        /// </summary>
+        /// <param name="id">Id of item</param>
+        /// <param name="value">New values</param>
         // PUT: api/Items/5
         [HttpPut]
         [Route("{id}")]
@@ -59,6 +77,10 @@ namespace ClassDemoRestService.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes item by id
+        /// </summary>
+        /// <param name="id">Id of item</param>
         // DELETE: api/ApiWithActions/5
         [HttpDelete]
         [Route("{id}")]
@@ -68,6 +90,11 @@ namespace ClassDemoRestService.Controllers
             items.Remove(item);
         }
 
+        /// <summary>
+        /// Search through names from the list and returns them.
+        /// </summary>
+        /// <param name="substring">name to find</param>
+        /// <returns>items with specific name</returns>
         [HttpGet]
         [Route("Name/{substring}")]
         public IEnumerable<Item> GetFromSubstring(String substring)
@@ -75,6 +102,11 @@ namespace ClassDemoRestService.Controllers
             return items.FindAll(i => i.Name.ToLower().Contains(substring.ToLower()));
         }
 
+        /// <summary>
+        /// Gets items with specific quality
+        /// </summary>
+        /// <param name="quality">quality input</param>
+        /// <returns>Items with specific quality</returns>
         [HttpGet]
         [Route("Quality/{quality}")]
         public IEnumerable<Item> GetFromQuality(String quality)
@@ -82,6 +114,11 @@ namespace ClassDemoRestService.Controllers
             return items.FindAll(i => i.Quality.ToLower().Contains(quality.ToLower()));
         }
 
+        /// <summary>
+        /// Search for items sith specific quantities
+        /// </summary>
+        /// <param name="filter">Class filterItem</param>
+        /// <returns>items with specific quantities</returns>
         [HttpGet]
         [Route("Search")]
         public IEnumerable<Item> GetWithFilter([FromQuery] FilterItem filter)

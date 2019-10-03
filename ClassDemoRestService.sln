@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDemoRestService", "Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLib", "ModelLib\ModelLib.csproj", "{509A688B-4994-47AF-8138-176413A81A82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{77AF8A85-83D0-4713-A70A-63DBF84E3452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeREST", "ConsumeREST\ConsumeREST.csproj", "{7A1277F3-742C-4710-80F9-F5C9053F8B8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{509A688B-4994-47AF-8138-176413A81A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{509A688B-4994-47AF-8138-176413A81A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{509A688B-4994-47AF-8138-176413A81A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AF8A85-83D0-4713-A70A-63DBF84E3452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AF8A85-83D0-4713-A70A-63DBF84E3452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AF8A85-83D0-4713-A70A-63DBF84E3452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AF8A85-83D0-4713-A70A-63DBF84E3452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1277F3-742C-4710-80F9-F5C9053F8B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1277F3-742C-4710-80F9-F5C9053F8B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1277F3-742C-4710-80F9-F5C9053F8B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1277F3-742C-4710-80F9-F5C9053F8B8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
