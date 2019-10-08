@@ -12,12 +12,14 @@ namespace ClassDemoRestService.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
-        private static readonly List<Car> Cars = new List<Car>
+        private static List<Car> Cars = new List<Car>
         {
             new Car {Id=1, Model = "Amazon", Vendor = "Volvo", Price = 12345},
             new Car {Id=2, Model = "A8", Vendor = "Audi", Price = 2222222},
             new Car {Id=3, Model = "Punto", Vendor = "Fiat", Price = 102022}
         };
+
+        private static int _nextId = 4;
 
         /// <summary>
         /// Gets all items from list
@@ -51,6 +53,7 @@ namespace ClassDemoRestService.Controllers
         [HttpPost]
         public void Post([FromBody] Car value)
         {
+            value.Id = _nextId++;
             Cars.Add(value);
         }
 
@@ -136,6 +139,18 @@ namespace ClassDemoRestService.Controllers
             {
                 return new List<Car>() { new Car(204, "error", "error", 204) };
             }
+        }
+
+        [HttpGet]
+        [Route("Reset")]
+        public void Reset()
+        {
+            Cars = new List<Car>
+            {
+                new Car {Id=1, Model = "Amazon", Vendor = "Volvo", Price = 12345},
+                new Car {Id=2, Model = "A8", Vendor = "Audi", Price = 2222222},
+                new Car {Id=3, Model = "Punto", Vendor = "Fiat", Price = 102022}
+            };
         }
     }
 }

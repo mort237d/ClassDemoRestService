@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModelLib.Model;
@@ -27,6 +28,7 @@ namespace ClassDemoRestService.Controllers
         /// </summary>
         /// <returns>list</returns>
         // GET: api/Items
+        //[DisableCors]
         [HttpGet]
         public IEnumerable<Item> Get()
         {

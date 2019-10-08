@@ -77,6 +77,7 @@ namespace ClassDemoRestService
                 options =>
                 {
                     options.AllowAnyOrigin().AllowAnyMethod();
+                    //options.AllowAnyOrigin().WithMethods("POST");
                     // allow everything from anywhere
                 });
 
